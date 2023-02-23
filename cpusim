@@ -71,82 +71,112 @@ LDA 7 ;take any random value like 10
 OUT
 HLT
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#6(iii)(STA)
+INP
+STA 10 ;take any random value like 10
+HLT
+
+#6(iv)(BUN)
+INP
+BUN JUMP ;JUMP is just a variable
+OUT
+JUMP: HLT
+
+NUM: .data 1 0
+
+
+#6(v)(ISZ)
+INP
+STA 69 ;take any random value like 10
+LOOP:ISZ 69 ;take any random value like 10
+     OUT
+     BUN LOOP
+     HLT
+     
+
+#7(i)(CLA)
+INP
+OUT
+CLA
+OUT
+HLT
+
+#7(ii)(CMA)
+INP
+OUT
+CMA
+OUT
+HLT
+
+#7(iii)(CME)
+CME
+HLT
+
+#7(iv)(HLT)
+HLT
+
+#8(ii)(SPA)
+INP
+SPA
+CMA
+OUT
+HLT
+
+#8(iii)(SNA)
+INP
+SNA
+CMA
+OUT
+HLT
+
+#8(iv)(SZE)
+SZE
+CME
+HLT
+
+#9(i)(CIR)
+INP
+OUT
+CIR
+OUT
+HLT
+
+#9(CIL)
+INP
+OUT
+CIL
+OUT
+HLT
+
+#10(ADDING INTEGERS UNTIL NON ZERO THEN OUTPUT W/O LAST NUMBER)
+START1: INP
+        SNA
+        BUN START2
+        BUN END
+
+START2: ADD SUM
+        STA SUM
+        BUN START1
+
+END:LDA SUM
+    OUT
+    HLT
+SUM:.data 1 0
+
+#11(ADDING INTEGERS UNTIL ZERO THEN OUTPUT SUM)
+START1: INP
+        SZA
+        BUN START2
+        BUN END
+
+START2: ADD SUM
+        STA SUM
+        BUN START1
+
+END:LDA SUM
+    OUT
+    HLT
+SUM:.data 2 0
 
 
 
